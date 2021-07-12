@@ -1,0 +1,97 @@
+﻿@model Edesoft.Models.Cliente
+
+@{
+    ViewBag.Title = "CadastrarCliente";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="~/css/Web.css" />
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--Awesome Icons-->
+    <script src="https://kit.fontawesome.com/a89251772b.js"></script>
+
+    <!--Javascipt-->
+    <script type="text/javascript" src="~/js/TelaCadastro.js"></script>
+
+    <!--Jquery-->>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
+
+    <title>CadastrarDivida</title>
+</head>
+<body>
+
+
+
+
+
+    <div class="sidenav">
+
+
+        <a href="@Url.Action("CadastrarDivida", "GestaoDivida")">
+            <i style='font-size:100px' class="far fa-address-book"></i>
+
+
+        </a>
+
+
+        <a href="@Url.Action("ListarDividas", "GestaoDivida")">
+            <i style='font-size:100px' class="fas fa-list"></i>
+
+        </a>
+
+        <a href="@Url.Action("DetalheDivida", "GestaoDivida")">
+            <i style='font-size:100px' class="fas fa-wallet"></i>
+
+        </a>
+
+    </div>
+
+
+
+
+
+    <div class="content">
+
+        @using (Html.BeginForm("CadastrarCliente", "Cadastro", FormMethod.Post, new { id = "Formulario" }))
+        {
+
+            <div class="form-group">
+                @Html.Label("Nome", "Nome")
+                @Html.TextBoxFor(m => m.NomeCliente, new { @class = "form-control", @required = "true" })
+                @Html.ValidationMessageFor(m => m.NomeCliente, "", new { @class = "text-danger" })
+
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Salvar" id="SalvarDados" class="btn btn-primary" />
+            </div>
+        }
+    </div>
+
+
+
+
+
+
+</body>
+</html>
